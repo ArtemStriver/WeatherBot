@@ -28,7 +28,7 @@ class WeatherMaker:
         city_id = data['list'][0]['id']
         return city_id
 
-    def search_weather(self, city_name='Perm'):
+    def search_weather(self, city_name='Moscow'):
         """Функция формирования списка с данными о погоде на 5 дней."""
         city_id = self.search_city_id(city_name)
         res = requests.get("http://api.openweathermap.org/data/2.5/forecast",
