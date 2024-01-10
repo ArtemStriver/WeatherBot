@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import os
+from dotenv import load_dotenv
 
 import telebot
 from telebot import types
@@ -20,8 +22,8 @@ Use python 3.11
 Так же может вывести информацию о своем функционале и стереть все сообщения из чата.
 """
 
-TOKEN = '6544367273:AAEtwSJW9Fmmuq3rqmP6h7zoUktSRJtiUiY'
-bot = telebot.TeleBot(TOKEN)
+load_dotenv()
+bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 log = logging.getLogger('weather_bot')
 
